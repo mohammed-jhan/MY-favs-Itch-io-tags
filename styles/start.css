@@ -1,0 +1,66 @@
+.kata-s,.Hiragana-charaters button{
+    font-family: ms gothic;
+}
+.Hiragana-area{
+    width: 80%;
+    margin: 10px auto;
+}
+.kata-s{
+    font-size: 3.6778rem;
+    border: 10px gray groove;
+    width:30%;
+    text-align: center;
+    line-height: 2.3;
+    height:155.33px;
+}
+.Hiragana-symbol{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+.katainfo div{
+    line-height: 2;
+}
+.katainfo div label{
+    cursor: pointer;
+}
+.mark{
+    color: red;
+    text-decoration: underline;
+}
+.Hiragana-charaters{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+    overflow-y: scroll;
+    height: 300px;
+}
+.Hiragana-charaters button{
+    background-color: green;
+    color: white;
+    text-align: center;
+    font-size: 1.623rem;
+    display: block;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+::selection{
+    background-color: yellow;
+    color: black;
+}
+.Hiragana-charaters button:hover{
+    background-color: magenta;
+    color: black;
+}
+.Hiragana-caption{
+    text-align: center;
+    border-bottom: 1px solid ;
+}
+audio #word,
+audio #spellin{
+    display: none;
+}
+.Hiragana-charaters button:disabled{
+    background-color: rgba(4, 131, 4, 0.473);
+}

@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html translate="no" lang="en">
+<head>
+   <link rel="stylesheet" href="styles/style.css">
+   <link rel="stylesheet" href="styles/artic.css">
+   <link rel="stylesheet" href="styles/fonts.css">
+   <link rel="stylesheet" href="styles/defult.css">
+   <link rel="stylesheet" href="styles/table.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My favourite itch.io tags Games</title>
+</head>
+<body>
+    <hr>
+    <div class="game-screen"></div>
+<div class="about-screen" id="aboutScreen">
+    <div class="option-window">
+        <div class="label">
+            <span>About</span>
+        </div>
+        <div class="area">
+            <h1 style="border-bottom:1px solid">About</h1>
+           <div class="options-table">
+                <p>This game learns the educator Users or anothers to understand of kana Hiragana japanese language and encrypted the words.</p>
+                <button class="exit-button y" type="button" onclick="document.getElementById('aboutScreen').style.display= 'none';">OK</button>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="credit-screen" id="creditScreen">
+    <div class="option-window">
+        <div class="label">
+            <span>credits</span>
+        </div>
+        <div class="area">
+            <h1 style="border-bottom:1px solid">credits</h1>
+           <div class="options-table">
+                <span>website developer by Mohammed mj</span>
+                <button class="exit-button y" type="button" onclick="document.getElementById('creditScreen').style.display= 'none';">OK</button>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="option-screen" id="optionScreen">
+    <div class="option-window">
+        <div class="label">
+            <span>Options</span>
+        </div>
+        <div class="area">
+            <h1 style="border-bottom:1px solid">Options</h1>
+           <div class="options-table">
+                <div>
+                    <span>background : </span>
+                    <input type="color" name="" id="color">
+                </div>
+                <div>
+                    <span>Music : </span>
+                    <input type="range" name="music" id="music" max="100" min="0">
+                </div>
+                <div>
+                    <span>Sound : </span>
+                    <input type="checkbox" name="" id="mute">
+                    <label for="mute">Mute</label>
+                </div>
+                <button class="exit-button y" type="button" onclick="saveChange()">OK</button>
+                <button onclick="document.getElementById('optionScreen').style.display= 'none';" class="exit-button n" type="button" onclick="exitDeline();">Cancel</button>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="exit-screen" id="exitScreen">
+    <div class="exit-window">
+        <div class="label">
+            <span>Exit</span>
+        </div>
+        <div class="area">
+            <p>Do you wanna exit ?</p>
+            <p>Note : if you wanna to exit in computer press Alt+f4 ,android press square.</p>
+            <button class="exit-button y" type="button" onclick="goToTheMAinMenu()">Yes</button>
+            <button onclick="document.getElementById('exitScreen').style.display= 'none';" class="exit-button n" type="button" onclick="exitDeline();">No</button>
+        </div>
+    </div>
+</div>
+<!-- <div class="black-screen" id="blackScreen"></div> -->
+<div class="interface" id="interFace">
+    <div class="address">
+        <h1 class="titi">
+                Mohapyutaa's <br> favourite 
+                <div class="titi" id="latTltle">itch.io</div> 
+                <div class="itchio" id="itchio"></div> 
+                tags
+        </h1>
+        <hr color="red" size="10">
+    </div>
+    <div class="main-interface">
+        <div class="start-game-text" id="startGameText" onclick="gameMenuContainer.style.left = '0'">
+            Click Here Or press Enter To Menu.
+        </div>
+        <div class="game-menu-container" id="gameMenuContainer">
+            <div class="buttons-of-game main-menu-of-game">
+                <div class="button start" onclick="getLink('menu.html')" data-text="Start">Start</div>
+                <div class="button option" onclick="document.getElementById('optionScreen').style.display= 'block';" data-text="Options">Options</div>
+                <div class="button about" onclick="document.getElementById('aboutScreen').style.display= 'block';" data-text="About">About</div>
+                <div class="button credits" onclick="document.getElementById('creditScreen').style.display= 'block';" data-text="Credit">Credit</div>
+                <div class="button quit" onclick="document.getElementById('exitScreen').style.display= 'block';" data-text="Quit">Quit</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // document.onkeydown = (e) => {
+    //     if(e.keyEscape)
+    // }
+    // var blackScreen = document.getElementById('blackScreen'),
+    //     interface = document.getElementById('interFace');
+    // var showMyPage = () => {
+    //     var tt = setTimeout(showpage, 2000);
+    // }
+    // var showpage = () => {
+    //     // document.body.style.transition = "250ms";
+    //     blackScreen.style.display = "none";
+    //     interface.style.display = "block";
+    // }
+    if(localStorage.getItem("backgroundColor") == null){
+        document.body.style.backgroundColor = "auto";
+    }else{
+        document.body.style.backgroundColor = localStorage.getItem("backgroundColor");   
+    }
+    getLink = (link) => {
+        if(link != ''){
+            window.location.href = link;
+        }else{
+            window.location.href = '0';
+        }
+    }
+    saveChange = () => {
+        var color = document.getElementById('color');
+        var music = document.getElementById('music');
+        var sound = document.getElementById('mute');
+        localStorage.getItem("backgroundColor");
+        window.localStorage.setItem("BackgroundColor",color.value);
+        window.localStorage.setItem("musicR",music.value);
+        window.localStorage.setItem("muting",sound.value);
+        document.body.style.backgroundColor = color.value;
+        document.getElementById('optionScreen').style.display= 'none';
+    }
+    function goToTheMAinMenu(){
+        document.getElementById('gameMenuContainer').style.left = '-10000px';
+        document.getElementById('exitScreen').style.display = 'none';
+    }
+    document.addEventListener("keyup",(e) => {
+        if(e.key === "Enter"){
+            document.getElementById('gameMenuContainer').style.left = "0";
+        }
+    });
+</script>
+    <script src="scripts/defa.js"></script>
+    <script src="scripts/ima.js"></script>
+<script>
+    
+    // WebSettings settings = MyWebView.getSettings();
+    // settings.setAllowFileAccess(true);
+    // settings.setAllowContentAccess(true);
+    // settings.setAllowFileAccessFromFileURLs(true);
+    // settings.setAllowUniversalAccessFromFileURLs(true);
+</script>
+</div>
+</body>
+</html>

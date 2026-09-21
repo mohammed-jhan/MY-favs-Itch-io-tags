@@ -1,0 +1,332 @@
+@font-face {
+    font-family: OxaniumRe;
+    src: url("Fonts/Oxanium-Regular.ttf");
+}
+@font-face {
+    font-family: JP2020;
+    src: url("Fonts/JAPANESE_2020\ ITALIC.ttf");
+}
+@font-face {
+    font-family: main-titi;
+    src: url("Fonts/Critical-Mass-LDR_0.ttf");
+}
+@font-face {
+    font-family: em-titi;
+    src: url("Fonts/emad-jannat-regular_0.ttf");
+}
+:root{
+    --neon-conic:conic-gradient(red,magenta,purple,blue);
+}
+body
+{
+    background: #000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* animation: showMeMyPage 250ms linear; */
+}
+/* @keyframes showMeMyPage {
+    from{
+        transform: scale(0);
+        
+    }
+    to{
+        transform: scale(1);
+    }
+} */
+.tag-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,150px);
+    grid-auto-rows: calc(100px + 50px);
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    background-color:rgba(0, 128, 0, 0.472);
+    width: 90%;
+    margin: 10px auto;   
+    height: 320px;
+    overflow-y: scroll;         
+}
+.tag-grid img{
+    width: 100%;
+    height: auto;
+    display: block;
+    /* margin: 0 10px; */
+    overflow: hidden;
+}
+.tag-grid{
+    position: relative;
+    overflow: hidden;
+}
+.tag-grid span{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.924);
+    padding: 10px;
+    display: block;
+    opacity: 0;
+    transition: 250sm linear;
+    text-align: center;
+    line-height: 100%;
+    text-shadow: 0 0 10px white,0 0 20px white,0 0 30px white;
+    font-family: OxaniumRe;
+    color: white;
+    animation: textGlowing 1000ms linear infinite;
+}
+.tag-grid span::before{
+    content: '';
+    position:absolute;
+    border-color: black;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    rotate: 40deg;
+    border-width: 10px;
+    border-top-color: transparent;
+}
+.tag-gallery .tag-grid:hover a span{
+    opacity: 1;
+    left:0;
+}
+.tag-caption{
+    /* margin: 40px 0 0 0; */
+    border-bottom: 10px olive dotted;
+    color: wheat;
+    padding: 10px;
+    font-family: JP2020;
+}
+.grid-gallery{
+    background: rgba(100%, 100%, 0%, 0.65524);
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+}
+.list-grid-gallery{
+    max-height: 370px;
+}
+.main-tag{
+    background: rgba(100%, 0%, 0%, 0.65524);
+    /* position: absolute; */
+    width: 97%;
+    margin: 2px auto;
+    padding: 5px;
+}
+div.tag-grid a img:hover{
+    transform: scale(2);
+    transition: 100ms all linear;
+}
+div.tab-fath{
+    /* position: absolute; */
+    text-align: center;
+    /* background-color: black; */
+    /* position: sticky;
+    top: 0;
+    z-index: 1111111; */
+}
+.div-tit{
+    width: 100%;
+    height: 100%;
+}
+.active-tab{
+    background-color: red !important;
+    box-shadow: 0 0 10px 1px rgb(100%, 0%, 0%),
+                0 0 15px 1px rgb(100%, 0%, 0%),
+                0 0 20px 1px rgb(100%, 0%, 0%),
+                0 0 25px 1px rgb(100%, 0%, 0%),
+                0 0 30px 1px rgb(100%, 0%, 0%);
+    text-shadow: 0 0 10px #ff0,0 0 15px #ff0, 0 0 20px #ff0;
+    animation: routing 4000ms linear infinite;
+}
+#gridList{
+    outline: none;
+    background: transparent;
+    border: 5px groove red;
+    border-image-source: linear-gradient(red,blue,purple);
+    /* border-image-width: 100%; */
+    border-image-slice:4;
+    border-image-repeat: stretch;
+    /* border-image-outset: 100%; */
+    font-family: em-titi;    
+    font-size: 16px;
+    cursor: pointer;
+    font-family: em-titi;
+    position: relative;
+    /* background-color: black; */
+    display: block;
+    padding: 5px 30px;
+    margin: 10px;
+    color: wheat;
+    text-align: center;
+}
+#gridList:before{
+    position: absolute;
+    content: '';
+    width: calc(100% + 10%);
+    height: calc(100% + 10%);
+    inset: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -111111;
+    animation: routing 1000ms linear infinite;
+    filter: blur(7px);
+}
+#gridList:hover{
+    color:black;
+    text-shadow: 0 0 10px rgb(100%, 0%, 0%),
+                 0 0 20px rgb(100%, 0%, 0%),
+                 0 0 30px rgb(100%, 0%, 0%),
+                 0 0 40px rgb(100%, 0%, 0%),
+                 0 0 50px rgb(100%, 0%, 0%);
+}
+#gridList:hover::before{
+    background: linear-gradient(red,yellow,green,magenta,blue,cyan);
+}
+@keyframes routing {
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+
+}
+@keyframes textGlowing {
+    0%{
+        text-shadow: 
+                    0 0 10px rgb(100%, 0%, 0%),
+                    0 0 20px rgb(100%, 0%, 0%),
+                    0 0 30px rgb(100%, 0%, 0%),
+                    0 0 40px rgb(100%, 0%, 0%),
+                    0 0 50px rgb(100%, 0%, 0%);
+    }
+    20%{
+        text-shadow: 
+                    0 0 10px rgb(100%, 100%, 0%),
+                    0 0 20px rgb(100%, 100%, 0%),
+                    0 0 30px rgb(100%, 100%, 0%),
+                    0 0 40px rgb(100%, 100%, 0%),
+                    0 0 50px rgb(100%, 100%, 0%);
+    }
+    40%{
+        text-shadow: 
+                    0 0 10px rgb(0%, 100%, 0%),
+                    0 0 20px rgb(0%, 100%, 0%),
+                    0 0 30px rgb(0%, 100%, 0%),
+                    0 0 40px rgb(0%, 100%, 0%),
+                    0 0 50px rgb(0%, 100%, 0%);
+    }
+    60%{
+        text-shadow: 
+                    0 0 10px rgb(0%, 100%, 100%),
+                    0 0 20px rgb(0%, 100%, 100%),
+                    0 0 30px rgb(0%, 100%, 100%),
+                    0 0 40px rgb(0%, 100%, 100%),
+                    0 0 50px rgb(0%, 100%, 100%);
+    }
+    80%{
+        text-shadow: 
+                    0 0 10px rgb(0%, 0%, 100%),
+                    0 0 20px rgb(0%, 0%, 100%),
+                    0 0 30px rgb(0%, 0%, 100%),
+                    0 0 40px rgb(0%, 0%, 100%),
+                    0 0 50px rgb(0%, 0%, 100%);
+    }
+    100%{
+        text-shadow: 
+                    0 0 10px rgb(100%, 0%, 100%),
+                    0 0 20px rgb(100%, 0%, 100%),
+                    0 0 30px rgb(100%, 0%, 100%),
+                    0 0 40px rgb(100%, 0%, 100%),
+                    0 0 50px rgb(100%, 0%, 100%);
+    }
+}
+/* @keyframes imgGlowing {
+    0%{
+        box-shadow:0 0 100px rgb(100%, 0%, 0%);
+    }
+    20%{
+        box-shadow:0 0 100px rgb(100%, 100%, 0%);
+    }
+    40%{
+        box-shadow:0 0 100px rgb(0%, 100%, 0%);
+    }
+    60%{
+       filter:drop-shadow(0 0 100px rgb(0%, 100%, 100%));
+    }
+    80%{
+        filter:drop-shadow(0 0 100px rgb(0%, 0%, 100%));
+    }
+    100%{
+        filter:drop-shadow(0 0 100px rgb(100%, 0%, 100%));
+    }
+} */
+.grid-list-togg,.pause-active{
+    display: none;
+}
+.list-gallery{
+    background-color: red;
+}
+.col-list{
+    background-color: aquamarine;
+    padding: 1px;
+    height: 370px;
+    overflow-y: scroll;
+}.col-list ol{
+    list-style-position: inside;
+}
+.col-list li a{
+font-family: em-titi;
+        /* font-size: 12px; */
+        line-height: 1.5;        
+        /* margin: 5px 0; */
+}
+.pause-container {
+    position: fixed;
+    z-index: 100000;
+    background-color: rgba(0,0,0,0.7567346);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+.pause-container .pause-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    inset: 50%;
+    width: 100%;
+    text-align: center;
+}
+.pause-container .pause-menu a.button {
+    display: block;
+    padding: 10px;
+    background: red;
+    color: black;
+    text-decoration: none;
+    margin: 10px auto;
+    max-width: 80%;
+    text-align: center;
+    transition: 250ms linear;
+    font-family: main-titi;
+    font-size: .678em;
+}
+.pause-container .pause-menu a.button:hover{
+    background-color: blueviolet;
+}
+.pause-button{
+    max-width: 100%;
+    padding: 5px;
+    background: red;
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    display: none;
+}
+.back{
+    display: none;
+}
+@media screen and (max-width:999px) {
+    .pause-button,.back{
+        display: block;
+    }
+
+}

@@ -1,0 +1,25 @@
+.wrapping-text{
+    text-wrap:wrap;
+    width:10px;
+    /* background-color: red; */
+    display: inline-block;
+}
+.article-area{
+    overflow: scroll;
+    height: 300px;
+    padding: 10px;
+
+}
+.article-area article{
+    margin-left: 10px;
+}
+.article-area p{
+    /* margin-left: 10px; */
+    line-height: 2;
+}
+.article-area > h2{
+    line-height: 2;
+}
+.article-area .topic {
+    margin-left: 20px;
+}

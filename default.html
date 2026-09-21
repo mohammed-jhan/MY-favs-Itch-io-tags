@@ -1,0 +1,454 @@
+﻿<div style="display: none;">
+    https://itch.io/games/free/platform-windows/tag-typing
+	https://itch.io/games/free/platform-windows/tag-learn-japanese
+	https://itch.io/games/free/platform-windows/tag-godot
+	https://itch.io/game-assets/free/tag-characters
+	https://itch.io/game-assets/free/tag-character-customization
+	https://itch.io/games/free/platform-windows/year-2023
+	https://itch.io/games/free/platform-windows/year-2020
+	https://itch.io/games/free/platform-windows/year-2024
+	https://itch.io/games/free/platform-windows/tag-scratch
+	https://itch.io/games/free/made-with-construct/platform-windows
+	https://itch.io/games/free/html5/platform-windows
+	https://itch.io/games/free/made-with-gdevelop/platform-windows
+	https://itch.io/games/free/platform-windows/tag-mahjong
+	https://itch.io/games/free/platform-windows/tag-2048
+	https://itch.io/games/free/platform-windows/tag-printing
+	https://itch.io/games/free/platform-windows/tag-anime
+	https://itch.io/games/free/platform-windows/tag-xylophone
+	https://itch.io/games/free/platform-windows/tag-guitar
+	https://itch.io/games/free/platform-windows/tag-driving
+	https://itch.io/games/free/platform-windows/tag-piano
+	https://itch.io/games/free/platform-windows/tag-math
+	https://itch.io/games/free/platform-windows/tag-bowling
+	https://itch.io/games/free/platform-windows/tag-words
+	https://itch.io/games/free/platform-windows/tag-pool
+	https://itch.io/games/free/platform-windows/tag-billiard
+	https://itch.io/games/genre-simulation/tag-guns
+	https://itch.io/games/free/platform-windows/tag-simulator/tag-weapons
+	https://itch.io/games/free/platform-windows/tag-simulator/
+
+tag-weapons
+	https://itch.io/games/free/genre-simulation/platform-web/tag-guns
+	https://itch.io/games/free/platform-windows/tag-minigames
+	https://itch.io/games/free/platform-windows/tag-mini
+	https://itch.io/games/free/platform-windows/tag-mini-games
+	https://itch.io/tools/free/platform-windows/tag-writing
+	https://itch.io/games/free/platform-windows/tag-writing
+	https://itch.io/games/free/platform-windows/tag-spinning-top
+	https://itch.io/games/new-and-popular/free/platform-windows/tag-spintop
+	https://itch.io/games/free/platform-windows/tag-spin
+	https://itch.io/games/free/platform-windows/tag-domino
+	https://itch.io/games/free/platform-windows/tag-xo
+	https://itch.io/games/free/platform-windows/tag-tic-tac-toe
+	https://itch.io/games/free/platform-windows/tag-link
+	https://itch.io/games/free/platform-windows/tag-connections
+	https://itch.io/game-assets/free/tag-memory
+	https://itch.io/games/free/platform-windows/tag-memory
+	https://itch.io/games/free/platform-windows/tag-cards
+	https://itch.io/game-assets/free/tag-card
+	https://itch.io/game-assets/free/tag-card-game
+	https://itch.io/game-assets/free/platform-windows/tag-card-game
+	https://itch.io/games/free/platform-windows/tag-brain-game
+	https://itch.io/games/accessibility-blind/free/platform-windows/tag-brain-training
+	https://itch.io/games/free/platform-windows/tag-snake
+	https://itch.io/games/free/platform-windows/tag-sudoku
+
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @font-face {
+            font-family: OxaniumRe;
+            src: url("Fonts/Oxanium-Regular.ttf");
+        }
+        @font-face {
+            font-family: JP2020;
+            src: url("Fonts/JAPANESE_2020\ ITALIC.ttf");
+        }
+        @font-face {
+            font-family: main-titi;
+            src: url("Fonts/Critical-Mass-LDR_0.ttf");
+        }
+        @font-face {
+            font-family: em-titi;
+            src: url("Fonts/emad-jannat-regular_0.ttf");
+        }
+        :root{
+            --neon-conic:conic-gradient(red,magenta,purple,blue);
+        }
+        body
+        {
+            background: #000;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1.titi{
+            font-family: main-titi;
+            text-align: center;
+            text-transform: capitalize;
+            background-color: transparent;
+            background-image: var(--neon-conic);
+            position: relative;
+            /* -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; */
+            /* -webkit-text-stroke: rgba(100%, 0%, 0%, 0.65524) 1px; */
+            box-shadow: 0 0 10px 1px rgb(100%, 0%, 0%),
+                         0 0 20px 1px rgb(100%, 0%, 0%),
+                         0 0 30px 1px rgb(100%, 0%, 0%),
+                         0 0 40px 1px rgb(100%, 0%, 0%),
+                         0 0 50px 1px rgb(100%, 0%, 0%);
+        }
+        .titi::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            background-image: var(--neon-conic);
+            filter:blur(14px);
+            inset: 0;
+            z-index: -11111;
+        }
+        .tag-gallery{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,150px);
+            grid-auto-rows: calc(100px + 50px);
+            grid-gap: 20px;
+            justify-content: center;
+            padding: 10px;
+            background-color:rgba(0, 128, 0, 0.472);
+            width: 90%;
+            margin: 10px auto;            
+        }
+        .tag-grid img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            /* margin: 0 10px; */
+            overflow: hidden;
+        }
+        .tag-grid{
+            position: relative;
+            overflow: hidden;
+        }
+        .tag-grid span{
+            position: absolute;
+            top: 0;
+            left:-400px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.924);
+            padding: 10px;
+            display: inline-flex;
+            opacity: 0;
+            transition: 250sm linear;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            /* font-size: 2em; */
+            font-family: OxaniumRe;
+        }
+        .tag-gallery .tag-grid:hover a span{
+            opacity: 1;
+            left:0;
+        }
+        .tag-caption{
+            border-bottom: 10px olive dotted;
+            color: wheat;
+            padding: 10px;
+            font-family: JP2020;
+        }
+        .grid-gallery{
+            background: rgba(100%, 100%, 0%, 0.65524);
+            position: relative;
+            padding: 5px;
+            margin: 5px;
+            height: 100%;
+        }
+        .main-tag{
+            background: rgba(100%, 0%, 0%, 0.65524);
+            position: absolute;
+            width: 97%;
+            margin: 2px auto;
+            padding: 5px;
+        }
+        div.tab-fath{
+            text-align: center;
+        }
+        div.tab-fath a{
+            cursor: pointer;
+            font-family: em-titi;
+            position: relative;
+            background-color: black;
+            display: inline-block;
+            padding: 5px 30px;
+            margin: 10px;
+            color: wheat;
+            text-shadow: 0 0 10px rgb(100%, 0%, 0%),
+                         0 0 20px rgb(100%, 0%, 0%),
+                         0 0 30px rgb(100%, 0%, 0%),
+                         0 0 40px rgb(100%, 0%, 0%),
+                         0 0 50px rgb(100%, 0%, 0%);
+            text-align: center;
+        }
+        div.tab-fath a:before{
+            position: absolute;
+            content: '';
+            width: calc(100% + 10%);
+            height: calc(100% + 10%);
+            inset: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -111111;
+            animation: routing 1000ms linear infinite, textGlowing 1000ms linear infinite;
+        }
+        .active-tab{
+            /* animation: bluring 1000ms linear infinite; */
+            background-color: red !important;
+            box-shadow: 0 0 10px 1px rgb(100%, 0%, 0%),
+                        0 0 15px 1px rgb(100%, 0%, 0%),
+                        0 0 20px 1px rgb(100%, 0%, 0%),
+                        0 0 25px 1px rgb(100%, 0%, 0%),
+                        0 0 30px 1px rgb(100%, 0%, 0%);
+            text-shadow: 0 0 10px #ff0,0 0 15px #ff0, 0 0 20px #ff0;
+            animation: routing 4000ms linear infinite;
+        }
+        div.tab-fath a:hover::before{
+            background: linear-gradient(red,yellow,green,magenta,blue,cyan);
+            filter: blur(50px);
+        }
+        @keyframes routing {
+            0%,100%{
+                filter: hue-rotate(0deg);
+            }
+            50%{
+                filter: hue-rotate(360deg);
+            }
+
+        }
+        @media screen and (max-width:600px) {
+            .tab-fath{
+                position: absolute;
+                top: 0;
+                left: 0;
+                /* width: 100%; */
+                height: 100%;
+                background-color: rgba(98, 0, 255, 0.459);
+                z-index: 111111;
+            }
+            .tab-fath a{
+                width: 100%;
+                display: block;
+                margin: 0 !important;
+            }
+        }
+        /* @keyframes groring {
+            0%,100%{
+                filter: hue-rotate(0deg);
+            }
+            50%{
+                filter: hue-rotate(360deg);
+            }
+
+        } */
+        @keyframes textGlowing {
+            0%{
+                text-shadow: 
+                            0 0 10px rgb(100%, 0%, 0%),
+                            0 0 20px rgb(100%, 0%, 0%),
+                            0 0 30px rgb(100%, 0%, 0%),
+                            0 0 40px rgb(100%, 0%, 0%),
+                            0 0 50px rgb(100%, 0%, 0%);
+            }
+            20%{
+                text-shadow: 
+                            0 0 10px rgb(100%, 100%, 0%),
+                            0 0 20px rgb(100%, 100%, 0%),
+                            0 0 30px rgb(100%, 100%, 0%),
+                            0 0 40px rgb(100%, 100%, 0%),
+                            0 0 50px rgb(100%, 100%, 0%);
+            }
+            40%{
+                text-shadow: 
+                            0 0 10px rgb(0%, 100%, 0%),
+                            0 0 20px rgb(0%, 100%, 0%),
+                            0 0 30px rgb(0%, 100%, 0%),
+                            0 0 40px rgb(0%, 100%, 0%),
+                            0 0 50px rgb(0%, 100%, 0%);
+            }
+            60%{
+                text-shadow: 
+                            0 0 10px rgb(0%, 100%, 100%),
+                            0 0 20px rgb(0%, 100%, 100%),
+                            0 0 30px rgb(0%, 100%, 100%),
+                            0 0 40px rgb(0%, 100%, 100%),
+                            0 0 50px rgb(0%, 100%, 100%);
+            }
+            80%{
+                text-shadow: 
+                            0 0 10px rgb(0%, 0%, 100%),
+                            0 0 20px rgb(0%, 0%, 100%),
+                            0 0 30px rgb(0%, 0%, 100%),
+                            0 0 40px rgb(0%, 0%, 100%),
+                            0 0 50px rgb(0%, 0%, 100%);
+            }
+            100%{
+                text-shadow: 
+                            0 0 10px rgb(100%, 0%, 100%),
+                            0 0 20px rgb(100%, 0%, 100%),
+                            0 0 30px rgb(100%, 0%, 100%),
+                            0 0 40px rgb(100%, 0%, 100%),
+                            0 0 50px rgb(100%, 0%, 100%);
+            }
+            
+            
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My favourite itch.io tags Games</title>
+</head>
+<body>
+    <h1 class="titi">My favourite itch.io tags</h1>
+    <hr>
+    <div class="tab-fath" id="tabFather">
+        <!-- <a href="" class="tab-libk tabtab1">Windows</a>
+        <a href="" class="tab-libk tabtab2">Web</a>
+        <a href="" class="tab-libk tabtab3">Year</a>
+        <a href="" class="tab-libk tabtab4">Games Engine</a> -->
+    </div>
+        <div class="grid-gallery" id="gridGallery">
+            <!-- <h1>
+                we
+            </h1>
+            <div class="tag-gallery" id="tagGallery">
+            
+            </div> -->
+        </div>
+</body>
+<script>
+     function tabGo(Pagename,eee,dddd){
+        var i,
+            links = document.getElementsByClassName("tab-libk"),
+            section = document.getElementsByClassName("main-tag");
+            for(i = 0;i < section.length;i++){
+                section[i].style.display = "none";
+            }
+            for(i = 0;i < links.length;i++){
+                links[i].className = links[i].className.replace(" active-tab","");
+            }
+            document.getElementById(dddd).style.display = "block";
+            eee.currentTarget.className += " active-tab";
+            // document.getElementById("tab_1").click();
+    }
+    function creatingTab(tabName,nemra,idd){
+        var tabFather = document.getElementById("tabFather");
+        var tabAnc = document.createElement('a');
+            tabAnc.classList.add('tab-libk');
+            tabAnc.classList.add('tabtab-'+nemra);
+            idd = 'tab_'+nemra;   
+            tabAnc.id = idd;
+            tabAnc.setAttribute("onclick" ,"tabGo("+tabName+','+'this'+','+idd+")");
+            tabAnc.innerHTML = tabName;
+        tabFather.appendChild(tabAnc);
+    }
+    function gridMaker(tags_array,itchIOurl,gridTitle,namra){
+        var co = 1;
+        creatingTab(gridTitle,namra,"");
+        var mainTag = document.createElement('div');
+            mainTag.classList.add('main-tag');
+            mainTag.classList.add('main-tag-'+namra);
+            mainTag.id = 'mainTag'+namra;
+        var gridGallery = document.getElementById("gridGallery");
+        var tagGallery = document.createElement('div');
+     tagGallery.classList.add('tag-gallery');
+     tagGallery.id = 'tagGallery';
+        var headingg = document.createElement('h1');
+        headingg.classList.add('tag-caption');
+        headingg.innerHTML = gridTitle;
+        for(var i = 0;i<tags_array.length;i++){
+        // for(var j = 0;j<tags_array[i].length;j++){
+            // console.log(tags_array.length + " , " + tags_array[i].length)
+            var tag = document.createElement('div');
+            tag.classList.add("tag-grid");
+            tag.id = "tag_"+co++;
+            var anc = document.createElement("a");
+            var ima = document.createElement("img");
+            // ima.width = "200";
+            // ima.height = "200";
+            anc.setAttribute("text-content",tags_array[i][0]);
+            var span = document.createElement("span");
+            anc.href = itchIOurl+tags_array[i][1]+"/";
+            ima.src = "src/"+tags_array[i][1]+".png";
+            span.innerHTML = tags_array[i][0];
+            anc.appendChild(ima);
+            anc.appendChild(span);
+            tag.appendChild(anc);
+            tagGallery.appendChild(tag);
+        // }    
+    }
+    mainTag.appendChild(headingg);
+    mainTag.appendChild(tagGallery);
+    gridGallery.appendChild(mainTag);
+    }
+   
+    var namba = 1;
+    var years_tags = [
+                        ['2016','year-2016'],
+                        ['2017','year-2017'],
+                        ['2018','year-2018'],
+                        ['2019','year-2019'],
+                        ['2020','year-2020'],
+                        ['2021','year-2021'],
+                        ['2022','year-2022'],
+                        ['2022','year-2023'],
+                        ['2022','year-2024'],
+                        ['2022','year-2025'],
+                        ['2022','year-2026']
+                    ],
+    Games_Engines = [
+                        ['godot','tag-godot'],
+                        ['scratch','tag-scratch'],
+                        ['construct','made-with-construct'],
+                        ['html5','html5'],
+                        ['gdevelop','made-with-gdevelop'],
+                    ],
+    tags = [
+                ['guitar','tag-guitar'],
+                ['domino','tag-domino'],
+                ['typing','tag-typing'],
+                ['learning japanese','tag-learn-japanese'],
+                ['characters','tag-characters'],
+                ['character customization','tag-character-customization'],
+                ['mahjong','tag-mahjong'],
+                ['2048','tag-2048'],
+                ['printing','tag-printing'],
+                ['anime','tag-anime'],
+                ['xylophone','tag-xylophone'],
+                ['driving','tag-driving'],
+                ['piano','tag-piano'],
+                ['math','tag-math'],
+                ['words','tag-words'],
+                ['pool','tag-pool'],
+                ['billiard','tag-billiard'],
+                ['bowling','tag-bowling'],
+                ['guns','tag-guns'],
+                ['weapons','tag-weapons'],
+                ['minigames','tag-minigames'],
+                ['mini','tag-mini'],
+                ['mini games','tag-mini-games'],
+                ['writing','tag-writing'],
+                ['spinning top','tag-spinning-top'],
+                ['spintop','tag-spintop'],
+                ['spin','tag-spin'],
+                ['rythem','tag-rythem'],
+		        ['dice','tag-dice'],
+                ['jigsaw','tag-jigsaw']
+               ];
+    gridMaker(tags,"https://itch.io/games/free/platform-windows/",'Windows platform',namba++);
+    gridMaker(years_tags,"https://itch.io/games/free/platform-windows/",'Windows platform By years',namba++);
+    gridMaker(tags,"https://itch.io/games/free/platform-web/",'Web platform',namba++);
+    gridMaker(Games_Engines,"https://itch.io/games/free/platform-window/",'Game Engine',namba++);
+</script>
+</html>

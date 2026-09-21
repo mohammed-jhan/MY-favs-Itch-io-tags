@@ -1,0 +1,208 @@
+@import url(fonts.css);
+@import url(start.css);
+@import url(artic.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "oxa",Arial, "Helvetica Neue", Helvetica, sans-serif;
+    transition: 250ms;
+}
+body{
+    height: 100vh;
+}
+.square{
+    /* background-color: yellow; */
+    width: 50px;
+    height: 50px;
+}
+.ref-menu{
+    height: 100px;
+    overflow-y: scroll;
+}
+.square .arrow{
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+.exit-screen,.option-screen,.about-screen,.credit-screen,.ref-screen{
+    width: 100%;
+    height: 100%;
+    background-color: #0009;
+    position: fixed;
+    display: none;
+    z-index:100000;
+}
+.label{
+    background-color: #006;
+    padding: 5px;
+    color: white;
+}
+.options-table p{
+    padding: 10px;
+}
+.exit-window,.option-window{
+    width: 300px;
+    min-height:130px;
+    background-color: azure;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.area{
+    width: 100%;
+    line-height: 2;
+    /* background-color: red; */
+    text-align: center;
+}
+
+.exit-button{
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 5px groove brown;
+    border-radius: 10px;
+}
+.exit-button.y{
+    background-color: green;
+    color: aliceblue;
+}
+.exit-button.n{
+    background-color: red;
+}
+h1.titi{
+    font-family: main-titi;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: transparent;
+    position: relative;
+    /* -webkit-text-stroke: rgba(100%, 0%, 0%, 0.65524) 1px; */
+    text-shadow: 0 0 05px rgb(100%, 0%, 0%),
+                 0 0 10px rgb(100%, 0%, 0%),
+                 0 0 15px rgb(100%, 0%, 0%),
+                 0 0 20px rgb(100%, 0%, 0%),
+                 0 0 25px rgb(100%, 0%, 0%);
+    margin: 10px auto;
+    animation: textGlowing 1000ms linear infinite;
+}
+.start-game-text{
+    text-align: center;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    width: 100%;
+    font-size: 1.4em;
+    margin: auto;
+    cursor: pointer;
+    color: white;
+    animation: oppa 1000ms linear infinite;
+}
+@keyframes oppa {
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    
+}
+.start-game-text:hover{
+    color: beige;
+    animation: textGlowing 1000ms linear infinite;
+}
+/*.interface{
+    display:block;  
+} */
+.address{
+    text-align: center;
+}
+.game-menu-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: -100000px;
+}
+.buttons-of-game{
+    margin: 40px auto;
+    width: 75%;
+}
+.buttons-of-game .button{
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    margin: 10px 0;
+    border: groove brown 10px;
+    position: relative;
+    color: wheat;
+    overflow: hidden;
+}
+#buttonsOfGame{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.buttons-of-game .button::after{
+    /* content: attr(data-text); */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1000px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color:white;
+    background-color: transparent;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: RED;
+    transition: 250ms left linear;
+    z-index: -1000;
+}
+.buttons-of-game .button:hover::after{
+    left: 0%;
+}
+.itchio{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    margin: 10px auto;    
+}
+.itchio .imgSH1 ,
+.itchio :not(.imgSH3){
+    position: absolute;
+    /* top: -5px; */
+}
+.itchio .imgSH1{
+    animation: imgGlowing 2000ms linear infinite 1000ms;
+}
+.itchio .imgSH3{
+    filter: blur(10px);
+}
+@keyframes imgGlowing {
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+.itchio .imgSH{
+    width: 100%;
+    height: 100%;
+}

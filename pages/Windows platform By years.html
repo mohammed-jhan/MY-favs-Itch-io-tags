@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+<head>
+    <link rel="stylesheet" href="../styles/defult.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My favourite itch.io tags Games</title>
+</head>
+<body>
+    <div class="pause-container pause-active" id="PauseMenu">
+        <!-- <div class="pause-menu">
+            <a href="" class="button">Back to menu</a>
+            <a href="" class="button">Back to main menu</a>
+            <button type="button" onclick="pausingOp()" class="pause-button back" id="PauseMenuButton">get Back</button>
+        </div> -->
+    </div>
+    <h1 class="tag-caption" style="text-align:center;">windows platform by years</h1>
+    <hr>
+    <div class="button-grid-list" id="button_gridList" id="button_gridList">
+        <button type="button" id="gridList">
+            
+        </button>
+    </div>
+    <div class="list-grid-gallery">
+    <div class="grid-gallery" id="gridGallery">
+    </div>
+    <div class="list-gallery" id="listGallery">
+        <div class="col-list" id="colList">
+            <ol id="orderingPos">
+                
+            </ol>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="../scripts/defa.js"></script>
+<script src="../scripts/gridList.js"></script>
+<script src="../scripts/create_grid.js"></script>
+<script>
+    var namba = 1;
+    var years_tags = [
+                        ['2020','year-2020'],
+                        ['2021','year-2021'],
+                        ['2022','year-2022'],
+                        ['2023','year-2023'],
+                        ['2024','year-2024'],
+                        ['2025','year-2025'],
+                        ['2026','year-2026']
+                    ];
+    gridMaker(years_tags,"https://itch.io/games/free/platform-windows/",'Windows platform By years',namba++);
+</script>
+</html>

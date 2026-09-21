@@ -1,0 +1,82 @@
+.table-area{
+    overflow: scroll;
+    height: 400px;
+}
+.table-example{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+.table-example th,
+.table-example td {
+    border:1px solid black;
+    padding:10px;
+    font-size: 1.666em;
+    text-align: center;    
+}
+#letter{
+    font-size: 1.4em;
+    cursor: pointer;
+    user-select: none;
+}
+#kataExa{
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    font-size: .656em;
+}
+#letter:hover,#kataExa:hover{
+    text-decoration: underline;
+    color: blue;
+}
+.pagination{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,50px);
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    justify-content: center;
+}
+.pagination .pages button{
+    background:-moz-linear-gradient(red,green,blue);
+    background:linear-gradient(red,green,blue);
+    color: white !important;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+.pagination .pages.page-active button{
+    background:-moz-linear-gradient(yellow,blue);
+    background:linear-gradient(yellow,blue);
+    color: white !important;
+    
+}
+.pagination .pages button:hover{
+    filter: invert();
+}
+@media (max-width:700px){
+    .table-example tbody tr{
+        display: block;
+        margin: 20px 0;
+    }
+    .table-example thead tr th{
+        display: none;
+    }
+    .table-example tbody tr td{
+        width: 100%;
+        display: block;
+        text-align: right;
+        position: relative;
+        font-size: 1.259999em !important;
+    }
+    .table-example tbody tr td::before{
+        position: absolute;
+        content: attr(data-text);
+        left: 0;
+        text-align: center;
+        margin-left: 10px;
+        font-size: .67em;
+    }
+
+}
