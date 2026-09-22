@@ -1,5 +1,9 @@
 var tags = [
 ['pacman','tag-pacman'],
+['bike','tag-bike'],
+['comedy','comedy'],
+['christmas','tag-christmas'],
+['cooking','tag-cooking'],
 ['pac-man','tag-pac-man'],
 ['maze','tag-maze'],
 ['runner','tag-runner'],
