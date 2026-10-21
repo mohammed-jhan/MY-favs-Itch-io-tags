@@ -18,8 +18,8 @@
             anc.setAttribute("text-content",tags_array[i][0]);
             var span = document.createElement("span");
             var div_tit = document.createElement("div");
-            //ima.src = "../src/"+tags_array[i][1]+".png";
-            ima.src = "tags_array[i][2];
+            ima.src = "../src/"+tags_array[i][1]+".png";
+            //ima.src = "tags_array[i][2];
             span.innerHTML = tags_array[i][0];
             div_tit.innerHTML = tags_array[i][0];
             div_tit.style.fontFamily = "OxaniumRe";
